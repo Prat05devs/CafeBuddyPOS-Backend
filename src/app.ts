@@ -52,7 +52,8 @@ app.use(errorHandler);
 
 const PORT = config.port;
 
-if (require.main === module) {
+// Only start server if running directly (not in serverless environment)
+if (require.main === module && process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
     console.log(`🚀 Restaurant POS API running on port ${PORT}`);
     console.log(`📝 Environment: ${process.env.NODE_ENV}`);
@@ -60,4 +61,5 @@ if (require.main === module) {
   });
 }
 
+// Export the app for Vercel
 export default app;

@@ -32,6 +32,8 @@ NODE_ENV=production
 CORS_ORIGIN=https://your-frontend-domain.vercel.app
 ```
 
+⚠️ **Important**: Make sure to set these environment variables in your Vercel project settings BEFORE deploying, as missing environment variables will cause the deployment to crash.
+
 ## 🔧 Post-Deployment Steps
 
 1. **Test the deployment**:
@@ -71,3 +73,42 @@ Update your frontend's API configuration to point to the deployed backend:
 // In your frontend project
 const API_BASE_URL = 'https://your-backend-domain.vercel.app/api/v1';
 ```
+
+## 🔧 Troubleshooting Deployment Issues
+
+### 500: INTERNAL_SERVER_ERROR / FUNCTION_INVOCATION_FAILED
+
+This error usually indicates missing environment variables or build issues. Follow these steps:
+
+1. **Check Environment Variables**:
+   - Go to your Vercel project → Settings → Environment Variables
+   - Ensure all required variables are set (see above)
+   - Redeploy after adding environment variables
+
+2. **Check Build Output**:
+   - Ensure `npm run build` completes successfully locally
+   - Check that `dist/app.js` is generated
+
+3. **Check Vercel Function Logs**:
+   - Go to your Vercel project → Functions tab
+   - Click on the failing function to see detailed error logs
+
+4. **Common Issues**:
+   - Missing `DATABASE_URL` → Add your Supabase connection string
+   - Missing `JWT_SECRET` → Add a secure random string
+   - Wrong `NODE_ENV` → Should be "production"
+   - Database connection timeout → Check Supabase database status
+
+### Database Connection Issues
+
+If you see database-related errors:
+- Verify your Supabase database is running
+- Check that the `DATABASE_URL` is correct
+- Ensure your Supabase project allows connections from Vercel
+
+### Re-deploy Steps
+
+After fixing environment variables:
+1. Go to Vercel project → Deployments
+2. Click "..." on latest deployment → Redeploy
+3. Or push a new commit to trigger automatic deployment
