@@ -41,6 +41,15 @@ app.use((req, res, next) => {
   next();
 });
 
+// Root route for basic health check
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Restaurant POS API is running',
+    timestamp: new Date().toISOString(),
+  });
+});
+
 // API routes
 app.use('/api/v1', routes);
 
