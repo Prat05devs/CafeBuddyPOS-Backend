@@ -5,10 +5,8 @@
   "main": "dist/app.js",
   "scripts": {
     "dev": "tsx watch -r dotenv/config src/app.ts",
-    "build": "npx tsc",
-    "postbuild": "cp package.json dist/",
-    "start": "node dist/app.js",
-    "vercel-build": "npx tsc",
+    "start": "node src/app.ts",
+    "build": "tsc",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push:pg  --config=./drizzle.config.ts"
