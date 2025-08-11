@@ -1,5 +1,5 @@
 import { eq, desc, and } from 'drizzle-orm';
-import { db } from '@/config/database';
+import { db } from '../config/database';
 import { 
   orders, 
   orderItems,
@@ -7,7 +7,7 @@ import {
   type OrderItem,
   type InsertOrder, 
   type InsertOrderItem
-} from '@/models/order.model';
+} from '../models/order.model';
 
 export class OrderService {
   static async getAllOrders(): Promise<Order[]> {

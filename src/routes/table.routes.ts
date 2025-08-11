@@ -9,10 +9,10 @@ import {
   generateQRCode,
   getAvailableTables,
   getOccupiedTables,
-} from '@/controllers/table.controller';
-import { authMiddleware, requireRole } from '@/middleware/auth.middleware';
-import { validateBody, validateParams } from '@/middleware/validation.middleware';
-import { insertTableSchema, updateTableSchema } from '@/models/table.model';
+} from '../controllers/table.controller';
+import { authMiddleware, requireRole } from '../middleware/auth.middleware';
+import { validateBody, validateParams } from '../middleware/validation.middleware';
+import { insertTableSchema, updateTableSchema } from '../models/table.model';
 import { z } from 'zod';
 
 const router = Router();

@@ -1,8 +1,8 @@
 import { Response } from 'express';
-import { OrderService } from '@/services/order.service';
-import { insertOrderSchema, insertOrderItemSchema } from '@/models/order.model';
-import { AppError, asyncHandler } from '@/middleware/error.middleware';
-import { AuthRequest } from '@/middleware/auth.middleware';
+import { OrderService } from '../services/order.service';
+import { insertOrderSchema, insertOrderItemSchema } from '../models/order.model';
+import { AppError, asyncHandler } from '../middleware/error.middleware';
+import { AuthRequest } from '../middleware/auth.middleware';
 import { z } from 'zod';
 
 // Schema for order item creation (without orderId)

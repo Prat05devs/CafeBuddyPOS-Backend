@@ -11,15 +11,15 @@ import {
   updateMenuItem,
   toggleMenuItemAvailability,
   deleteMenuItem,
-} from '@/controllers/menu.controller';
-import { authMiddleware, requireRole } from '@/middleware/auth.middleware';
-import { validateBody, validateParams } from '@/middleware/validation.middleware';
+} from '../controllers/menu.controller';
+import { authMiddleware, requireRole } from '../middleware/auth.middleware';
+import { validateBody, validateParams } from '../middleware/validation.middleware';
 import { 
   insertCategorySchema, 
   insertMenuItemSchema,
   updateCategorySchema,
   updateMenuItemSchema
-} from '@/models';
+} from '../models';
 import { z } from 'zod';
 
 const router = Router();

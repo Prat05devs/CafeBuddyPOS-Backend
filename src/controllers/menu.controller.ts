@@ -1,13 +1,13 @@
 import { Response } from 'express';
-import { MenuService } from '@/services/menu.service';
+import { MenuService } from '../services/menu.service';
 import { 
   insertMenuItemSchema, 
   insertCategorySchema,
   updateMenuItemSchema,
   updateCategorySchema
-} from '@/models';
-import { AppError, asyncHandler } from '@/middleware/error.middleware';
-import { AuthRequest } from '@/middleware/auth.middleware';
+} from '../models';
+import { AppError, asyncHandler } from '../middleware/error.middleware';
+import { AuthRequest } from '../middleware/auth.middleware';
 
 // Category controllers
 export const getCategories = asyncHandler(async (req: AuthRequest, res: Response) => {

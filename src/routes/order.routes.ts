@@ -7,9 +7,9 @@ import {
   updatePaymentStatus,
   cancelOrder,
   getOrderStats,
-} from '@/controllers/order.controller';
-import { authMiddleware, requireRole } from '@/middleware/auth.middleware';
-import { validateParams } from '@/middleware/validation.middleware';
+} from '../controllers/order.controller';
+import { authMiddleware, requireRole } from '../middleware/auth.middleware';
+import { validateParams } from '../middleware/validation.middleware';
 import { z } from 'zod';
 
 const router = Router();

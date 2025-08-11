@@ -1,8 +1,8 @@
 import { Response } from 'express';
-import { TableService } from '@/services/table.service';
-import { insertTableSchema, updateTableSchema } from '@/models/table.model';
-import { AppError, asyncHandler } from '@/middleware/error.middleware';
-import { AuthRequest } from '@/middleware/auth.middleware';
+import { TableService } from '../services/table.service';
+import { insertTableSchema, updateTableSchema } from '../models/table.model';
+import { AppError, asyncHandler } from '../middleware/error.middleware';
+import { AuthRequest } from '../middleware/auth.middleware';
 
 export const getTables = asyncHandler(async (req: AuthRequest, res: Response) => {
   const { floor, status } = req.query;

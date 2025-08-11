@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { register, login, getProfile, logout } from '@/controllers/auth.controller';
-import { authMiddleware } from '@/middleware/auth.middleware';
-import { validateBody } from '@/middleware/validation.middleware';
-import { insertUserSchema } from '@/models/user.model';
+import { register, login, getProfile, logout } from '../controllers/auth.controller';
+import { authMiddleware } from '../middleware/auth.middleware';
+import { validateBody } from '../middleware/validation.middleware';
+import { insertUserSchema } from '../models/user.model';
 import { z } from 'zod';
 
 const router = Router();

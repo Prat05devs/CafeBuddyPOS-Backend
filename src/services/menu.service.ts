@@ -1,5 +1,5 @@
 import { eq, and } from 'drizzle-orm';
-import { db } from '@/config/database';
+import { db } from '../config/database';
 import { 
   menuItems, 
   categories,
@@ -9,7 +9,7 @@ import {
   type InsertCategory,
   type UpdateMenuItem,
   type UpdateCategory
-} from '@/models';
+} from '../models';
 
 export class MenuService {
   // Category methods

@@ -1,11 +1,11 @@
 import { eq, and } from 'drizzle-orm';
-import { db } from '@/config/database';
+import { db } from '../config/database';
 import { 
   tables,
   type Table, 
   type InsertTable, 
   type UpdateTable
-} from '@/models/table.model';
+} from '../models/table.model';
 
 export class TableService {
   static async getAllTables(): Promise<Table[]> {

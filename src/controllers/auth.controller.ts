@@ -1,8 +1,8 @@
 import { Response } from 'express';
-import { AuthService } from '@/services/auth.service';
-import { insertUserSchema } from '@/models/user.model';
-import { AppError, asyncHandler } from '@/middleware/error.middleware';
-import { AuthRequest } from '@/middleware/auth.middleware';
+import { AuthService } from '../services/auth.service';
+import { insertUserSchema } from '../models/user.model';
+import { AppError, asyncHandler } from '../middleware/error.middleware';
+import { AuthRequest } from '../middleware/auth.middleware';
 
 export const register = asyncHandler(async (req: AuthRequest, res: Response) => {
   const validatedData = insertUserSchema.parse(req.body);
