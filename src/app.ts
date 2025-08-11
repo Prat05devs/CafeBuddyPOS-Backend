@@ -23,6 +23,10 @@ app.use(helmet({
   contentSecurityPolicy: false, // Disable CSP for simplicity in development
 }));
 
+app.use(cors({
+  origin: '*'
+}));
+
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
